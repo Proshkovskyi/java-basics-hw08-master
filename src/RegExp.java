@@ -12,14 +12,14 @@ public class RegExp {
      * @return String with IP address
      */
     public static String getIpAddress(String text) {
+        String regEx =
+                "\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}"
+                + "(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
 
-        Pattern regex = Pattern.compile("(\\d{0,3}\\.){3}\\d{0,3}");
-        Pattern regexExclamationMark = Pattern.compile("(\\d{0,3}\\.){3}\\d{0,3}(!$)");
-
+        Pattern regex = Pattern.compile(regEx);
         Matcher matchRegex = regex.matcher(text);
-        Matcher matchRegexExpMark = regexExclamationMark.matcher(text);
 
-        if (matchRegex.find() && (!matchRegexExpMark.find())) {
+        if (matchRegex.find()) {
             return matchRegex.group();
         } else {
             return "";

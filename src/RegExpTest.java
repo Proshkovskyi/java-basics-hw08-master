@@ -13,16 +13,15 @@ public class RegExpTest {
     @DataProvider(name = "text")
     public static Object[][] text() {
         return new Object[][]{
-                {"8.8.8.8", "8.8.8.8"},
-                {"http://192.168.1.1/index.html", "192.168.1.1"},
-                {"This text contains a valid IP address 254.254.254.254, find it!", "254.254.254.254"},
-                {"IP could not have negative numbers like -1.-2.-3.-4", ""},
-                {"Invalid IP: 300.300.300.300!", ""},
-                {"1.1.1.1.1:8888", "1.1.1.1"}, // should return ip without port
-                {"10. 10.10.10", ""},// skip ips with a space
-
-                {"invalid: 256.256.256.256", ""},
-                {"valid IP: 255.255.255.255!", "255.255.255.255"},
+            {"8.8.8.8", "8.8.8.8"},
+            {"http://192.168.1.1/index.html", "192.168.1.1"},
+            {"This text contains a valid IP address 254.254.254.254, find it!", "254.254.254.254"},
+            {"IP could not have negative numbers like -1.-2.-3.-4", ""},
+            {"Invalid IP: 300.300.300.300!", ""},
+            {"1.1.1.1.1:8888", "1.1.1.1"},
+            {"10. 10.10.10", ""},
+            {"invalid: 256.256.256.256", ""},
+            {"valid IP: 255.255.255.255!", "255.255.255.255"}
         };
     }
 
